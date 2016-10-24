@@ -157,8 +157,8 @@ public class TrafficFloatWindowService extends Service {
             Log.i("mFloatLayout","mFloatLayout居然是null") ;
             return;
         }
-        mFloatLayout.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.EXACTLY),
-                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.EXACTLY));
+        // mFloatLayout.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.EXACTLY),
+        //        View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.EXACTLY));
         // 设置监听浮动窗口的触摸移动
         mFloatLayout.setOnTouchListener(new OnTouchListener() {
 
