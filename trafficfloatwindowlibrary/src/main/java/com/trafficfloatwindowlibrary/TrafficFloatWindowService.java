@@ -102,6 +102,15 @@ public class TrafficFloatWindowService extends Service {
                 return;
             } else {
                 //Android6.0以上
+                if (Build.VERSION.SDK_INT >= 23) {
+                    if (!Settings.canDrawOverlays(this)) {
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        getApplicationContext().startActivity(intent);
+                    } else {
+                        //TODO do something you need
+                    }
+                }
                 mWindowManager.addView(mFloatLayout, wmParams);// 添加mFloatLayout
             }
         } else {
